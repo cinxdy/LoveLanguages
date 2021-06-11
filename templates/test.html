@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <h2> 자신과 더 잘 맞는다고 생각되는 쪽에 체크해주세요!</h2>
+        
+    <form method="POST" action="/result">
+        <table class="table table-hover">
+            <colgroup>
+                <col width="40%">
+                <col width="20%">
+                <col width="40%">
+            </colgroup>
+            
+            {%for item in data%}
+            <tr class="info">
+                <td>{{item['question'][0]}}<br><input type="radio" name="question{{loop.index}}" value="{{item['point'][0]}}"> </td>
+                <td>잘 모르겠다<br><input type="radio" name="question{{loop.index}}" value="noanswer" checked="checked"></td>
+                <td>{{item['question'][1]}}<br><input type="radio" name="question{{loop.index}}" value="{{item['point'][1]}}"> </td>
+            </tr>
+            {%endfor%}
+
+        </table>
+        <button name='button' type="submit" class="btn btn-lg btn-info" value='go'>Next!</button>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <h2> 당신의 점수는!!! </h2>
+
+    <h3>
+    인정하는 말: {{point['A']}}
+    함께하는 시간: {{point['B']}}
+    선물: {{point['C']}}
+    봉사: {{point['D']}}
+    스킨십: {{point['E']}}
+    </h3>
+    무응답: {{point['noanswer']}}
+
+
+{% endblock %}
